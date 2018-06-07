@@ -223,26 +223,17 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#user-sign-up" class="toc-h1 toc-link" data-title="user-sign-up">User Sign Up</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request" class="toc-h2 toc-link" data-title="http-request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#headers" class="toc-h2 toc-link" data-title="headers">Headers</a>
+                    <a href="#user-login" class="toc-h2 toc-link" data-title="user-login">User Login</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#user-login" class="toc-h1 toc-link" data-title="user-login">User Login</a>
+            <a href="#user" class="toc-h1 toc-link" data-title="user">User</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#http-request-2" class="toc-h2 toc-link" data-title="http-request">HTTP Request</a>
-                  </li>
-                  <li>
-                    <a href="#headers-2" class="toc-h2 toc-link" data-title="headers">Headers</a>
+                    <a href="#create" class="toc-h2 toc-link" data-title="create">Create</a>
                   </li>
               </ul>
           </li>
@@ -250,7 +241,7 @@
             <a href="#product" class="toc-h1 toc-link" data-title="product">Product</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-a-specific-product-details" class="toc-h2 toc-link" data-title="get-a-specific-product-details">Get a specific product details</a>
+                    <a href="#product-show-detail" class="toc-h2 toc-link" data-title="product-show-detail">Product Show/Detail</a>
                   </li>
               </ul>
           </li>
@@ -263,42 +254,9 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1><h1 id='authentication'>Authentication</h1><h1 id='user-sign-up'>User Sign Up</h1>
-<p>This endpoint registers the user</p>
-
-<blockquote>
-<p>On successful signup the returned JSON structure is like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully created."</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe123@yopmail.com"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"geoZipCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"JSESSIONID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DA1DB0BBD07360F0EBB7DC2D51E32E58.web01staging"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre><h3 id='http-request'>HTTP Request</h3>
-<p><code>POST http://stage.internal.shopwell.com/v2/user</code></p>
-<h3 id='headers'>Headers</h3>
-<table><thead>
-<tr>
-<th>Header</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Content-Type</td>
-<td>application/json</td>
-</tr>
-</tbody></table>
-<h1 id='user-login'>User Login</h1>
+        <h1 id='introduction'>Introduction</h1><h1 id='authentication'>Authentication</h1><h2 id='user-login'>User Login</h2>
 <p>This endpoint logins the user</p>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>POST http://stage.internal.shopwell.com/v2/session</code></p>
 
 <blockquote>
@@ -326,7 +284,7 @@
       </span><span class="s2">"JSESSIONID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DA1DB0BBD07360F0EBB7DC2D51E32E58.web01staging"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre><h3 id='headers-2'>Headers</h3>
+</span></code></pre><h3 id='headers'>Headers</h3>
 <table><thead>
 <tr>
 <th>Header</th>
@@ -338,7 +296,40 @@
 <td>application/json</td>
 </tr>
 </tbody></table>
-<h1 id='product'>Product</h1><h2 id='get-a-specific-product-details'>Get a specific product details</h2>
+<h1 id='user'>User</h1><h2 id='create'>Create</h2><h3 id='user-sign-up'>User Sign Up</h3>
+<p>This endpoint registers the user</p>
+
+<blockquote>
+<p>On successful signup the returned JSON structure is like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully created."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe123@yopmail.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"zipCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"geoZipCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"JSESSIONID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DA1DB0BBD07360F0EBB7DC2D51E32E58.web01staging"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST http://stage.internal.shopwell.com/v2/user</code></p>
+<h3 id='headers-2'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+</tbody></table>
+<h1 id='product'>Product</h1><h2 id='product-show-detail'>Product Show/Detail</h2><h3 id='get-a-specific-product-details'>Get a specific product details</h3>
 <p>This endpoint retrieves the details of a specific product</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://stage.internal.shopwell.com/v2/product?upc=&lt;product upc&gt;</code></p>
@@ -351,43 +342,405 @@ GET http://stage.internal.shopwell.com/v2/product?upc=3680020950</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"data"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"product_details"</span><span class="p">:{</span><span class="w">
-      </span><span class="s2">"avoid_by_profiles"</span><span class="p">:[],</span><span class="w">
-      </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food Club"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fit_score_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medium match for you"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MEDIUM"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"last_purchased"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"matches_avoids"</span><span class="p">:[],</span><span class="w">
-      </span><span class="s2">"matches_dont_wants"</span><span class="p">:[],</span><span class="w">
-      </span><span class="s2">"matches_moderation"</span><span class="p">:[],</span><span class="w">
-      </span><span class="s2">"matches_wants"</span><span class="p">:[],</span><span class="w">
-      </span><span class="s2">"moderation_flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"nutrition_labels"</span><span class="p">:{</span><span class="s2">"nutrition_percentages"</span><span class="p">:{</span><span class="s2">"Total Fat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"Saturated Fat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"Carbohydrate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3333333333333333</span><span class="p">,</span><span class="w"> </span><span class="s2">"Cholesterol"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="err">…</span><span class="p">},</span><span class="w">
-      </span><span class="s2">"onlineStores"</span><span class="p">:[],</span><span class="w">
-      </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Peppercorn"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://prod.shopwell.com/product/3680020950_thumb.png"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_image_full"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://prod.shopwell.com/product/3680020950_full.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marinade Mix"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.12</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oz"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"rating_stats"</span><span class="p">:{</span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">},</span><span class="w">
-      </span><span class="s2">"show_additional_details"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"stores"</span><span class="p">:[],</span><span class="w">
-      </span><span class="s2">"top_preference"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"top_preference_multiple"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3680020950"</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"product_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"avoid_by_profiles"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Food Club"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fit_score_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medium match for you"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MEDIUM"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_purchased"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"matches_avoids"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"matches_dont_wants"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"matches_moderation"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"matches_wants"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"moderation_flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nutrition_labels"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"nutrition_percentages"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"Total Fat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Saturated Fat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Carbohydrate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3333333333333333</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Cholesterol"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Sodium"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Potassium"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Fiber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Vitamin A"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Vitamin C"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Vitamin D"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Vitamin E"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Vitamin B6"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Vitamin B12"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Calcium"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Iron"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Thiamin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Riboflavin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Niacin"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Phosphorus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Iodine"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Zinc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Magnesium"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Copper"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"Folic Acid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"nutrition_quantities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"Fat"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"Saturated Fat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Trans Fat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Carbs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"Fiber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Sugar"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Protein"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Cholesterol"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mg"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Sodium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">410</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mg"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Potassium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Vitamin A"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Vitamin C"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Vitamin D"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Vitamin E"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Vitamin B6"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Vitamin B12"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Calcium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Iron"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.36</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mg"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Thiamin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Riboflavin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Niacin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Phosphorus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Iodine"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Zinc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Magnesium"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Copper"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"Folic Acid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"Calories"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"breakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"Fat Calories"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"serving"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"servingSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"servingSizeAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"servingsPerContainer"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"onlineStores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Black Peppercorn"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w">
+          </span><span class="s2">"http://prod.shopwell.com/product/3680020950_thumb.png"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_image_full"</span><span class="p">:</span><span class="w">
+          </span><span class="s2">"http://prod.shopwell.com/product/3680020950_full.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marinade Mix"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oz"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rating_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"show_additional_details"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"stores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+        </span><span class="s2">"top_preference"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"top_preference_multiple"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3680020950"</span><span class="w">
       </span><span class="p">},</span><span class="w">
-      </span><span class="s2">"alternate_products"</span><span class="p">:[{</span><span class="s2">"bestforme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sylvia's Restaurant"</span><span class="p">,</span><span class="w"> </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83"</span><span class="p">,</span><span class="err">…</span><span class="p">],</span><span class="w">
+      </span><span class="s2">"alternate_products"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"bestforme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sylvia's Restaurant"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"83"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">280687</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_avoids"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_dont_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"nearme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"onlineStores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14.5 Oz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.shopwell.com/kp/3068492666_thumb.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mixed Greens"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pk"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"result_position"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"stores"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3068492666"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"bestforme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shotgun Willie's"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"78"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">278434</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_avoids"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_dont_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"nearme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"onlineStores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texas Chili 3.1 Oz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media.shopwell.com/kp/3068490147_thumb.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seasoning"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pk"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"result_position"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"stores"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3068490147"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"bestforme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeff Foxworthy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">186172</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_avoids"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_dont_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"nearme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"onlineStores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w">
+            </span><span class="s2">"http://media.shopwell.com/gladson/00041149322011_thumb.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chili Kit"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.21</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"result_position"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"stores"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4114932201"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"bestforme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearitos"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">186443</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_avoids"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_dont_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"nearme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"onlineStores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chili"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w">
+            </span><span class="s2">"http://media.shopwell.com/gladson/00024335513004_thumb.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seasoning"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"result_position"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"stores"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2433551300"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"bestforme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jeff Foxworthy"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"73"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">186181</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_avoids"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_dont_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"nearme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"onlineStores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cajun"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w">
+            </span><span class="s2">"http://media.shopwell.com/gladson/00041149322028_thumb.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chili Kit"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.76</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"result_position"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"stores"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4114932202"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"bestforme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bear Creek"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">276627</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_avoids"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_dont_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"nearme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"onlineStores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Darn Good"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w">
+            </span><span class="s2">"http://www.shopwell.com/images/shopwell_product_thumb.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chili Mix"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pk"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"result_position"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"stores"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3068487576"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"bestforme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brooks"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"current_list_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"70"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fit_score_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">109078</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_avoids"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_dont_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"matches_wants"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"nearme_index"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"onlineStores"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+          </span><span class="s2">"primary_store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Secret Chili, Mild"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_image"</span><span class="p">:</span><span class="w">
+            </span><span class="s2">"http://media.shopwell.com/gladson/00023000920857_thumb.png"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Seasoning"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.25</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"product_size_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oz"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"rating_stats"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"likes"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"dislikes"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"result_position"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"stores"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"upc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2300092085"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
       </span><span class="s2">"trade_up_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre><h3 id='url-parameters'>Url Parameters</h3>
