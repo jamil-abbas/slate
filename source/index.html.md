@@ -91,9 +91,11 @@ This endpoint logins the user
 | ------------ | ---------------- |
 | Content-Type | application/json |
 
-# Product Details
+# Product
 
-This endpoint gives the details of products
+## Get a specific product details
+
+This endpoint retrieves the details of a specific product
 
 ### HTTP Request
 
