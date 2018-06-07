@@ -2,11 +2,7 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
-
+- json
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
@@ -19,221 +15,141 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
 # Authentication
 
-> To authorize, use this code:
+# User Sign Up
 
-```ruby
-require 'kittn'
+This endpoint registers the user
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+> On successful signup the returned JSON structure is like this:
 
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "status": "success",
+    "message": "Successfully created.",
+    "data": {
+      "emailAddress": "johndoe123@yopmail.com",
+      "username": "John Doe",
+      "zipCode": null,
+      "geoZipCode": null,
+      "JSESSIONID": "DA1DB0BBD07360F0EBB7DC2D51E32E58.web01staging"
+    }
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+### HTTP Request
+
+`POST http://stage.internal.shopwell.com/v2/user`
+
+### Headers
+
+| Header       | Description      |
+| ------------ | ---------------- |
+| Content-Type | application/json |
+
+# User Login
+
+This endpoint logins the user
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST http://stage.internal.shopwell.com/v2/session`
 
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+> Login request body
 
 ```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+[
+  {
+    "email_address": "johndoe123@yopmail.com",
+    "password": "Engintech123"
+  }
+]
 ```
 
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+> If valid credentials are entered, the resulting response would be:
 
 ```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
+[
+  {
+      "status": "success",
+      "message": "Successfully created.",
+      "data":{
+      "emailAddress": "johndoe123@yopmail.com",
+      "username": "John Doe",
+      "zipCode": null,
+      "geoZipCode": null,
+      "JSESSIONID": "DA1DB0BBD07360F0EBB7DC2D51E32E58.web01staging"
+  }
+]
 ```
 
-This endpoint deletes a specific kitten.
+### Headers
+
+| Header       | Description      |
+| ------------ | ---------------- |
+| Content-Type | application/json |
+
+# Product Details
+
+This endpoint gives the details of products
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`GET http://stage.internal.shopwell.com/v2/product?upc=<product upc>`
 
-### URL Parameters
+> Request a specific product e.g
+> GET http://stage.internal.shopwell.com/v2/product?upc=3680020950
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+> Response
 
+```json
+[
+  {
+      "status": "success",
+      "data":{
+      "product_details":{
+      "avoid_by_profiles":[],
+      "brand_name": "Food Club",
+      "comments": null,
+      "current_list_ids": null,
+      "fit_score": 44,
+      "fit_score_label": "Medium match for you",
+      "fit_score_type": "MEDIUM",
+      "id": 18,
+      "last_purchased": null,
+      "matches_avoids":[],
+      "matches_dont_wants":[],
+      "matches_moderation":[],
+      "matches_wants":[],
+      "moderation_flag": false,
+      "nutrition_labels":{"nutrition_percentages":{"Total Fat": 0, "Saturated Fat": 0, "Carbohydrate": 0.3333333333333333, "Cholesterol": 0,…},
+      "onlineStores":[],
+      "primary_store_id": -1,
+      "product_description": "Black Peppercorn",
+      "product_image": "http://prod.shopwell.com/product/3680020950_thumb.png",
+      "product_image_full": "http://prod.shopwell.com/product/3680020950_full.jpg",
+      "product_name": "Marinade Mix",
+      "product_size": 1.12,
+      "product_size_unit": "Oz",
+      "rating": null,
+      "rating_stats":{"likes": 0, "dislikes": 0},
+      "show_additional_details": true,
+      "stores":[],
+      "top_preference": null,
+      "top_preference_multiple": null,
+      "upc": "3680020950"
+      },
+      "alternate_products":[{"bestforme_index": 0, "brand_name": "Sylvia's Restaurant", "current_list_ids": null, "fit_score": "83",…],
+      "trade_up_mode": true
+}
+  }
+]
+```
+
+### Url Parameters
+
+| Parameter | Description               |
+| --------- | ------------------------- |
+| upc       | upc of a specific product |
