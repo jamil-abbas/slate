@@ -59,6 +59,17 @@ http://stage.internal.shopwell.com/v2/session
 
 # User
 
+Represents user details.
+
+### User Attributes
+
+* id (Number) : Unique identifier
+* Username(string) :  User name
+* Email Address(string) : Email id of the user
+* Password(string): Password of the user
+
+
+
 ## Create
 
 ### User Sign Up
@@ -97,7 +108,10 @@ This endpoint registers the user
 
 ## Product Show/Detail
 
-### Get a specific product details
+### Product Attributes
+
+
+### Get  product details
 
 This endpoint retrieves the product details based on its upc value
 
