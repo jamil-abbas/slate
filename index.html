@@ -209,7 +209,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/innitlogo.png" class="logo" alt="Innitlogo" />
+    # <img src="images/innitlogo.png" class="logo" alt="Innitlogo" /> 
         <div class="lang-selector">
               <a href="#" data-language-name="json">json</a>
               <a href="#" data-language-name="curl">curl</a>
@@ -233,6 +233,9 @@
           <li>
             <a href="#user" class="toc-h1 toc-link" data-title="user">User</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#user-attributes" class="toc-h2 toc-link" data-title="user-attributes">User Attributes</a>
+                  </li>
                   <li>
                     <a href="#create" class="toc-h2 toc-link" data-title="create">Create</a>
                   </li>
@@ -296,7 +299,16 @@ http://stage.internal.shopwell.com/v2/session
 <td>application/json</td>
 </tr>
 </tbody></table>
-<h1 id='user'>User</h1><h2 id='create'>Create</h2><h3 id='user-sign-up'>User Sign Up</h3>
+<h1 id='user'>User</h1>
+<p>Represents user details.</p>
+<h3 id='user-attributes'>User Attributes</h3>
+<ul>
+<li>id (Number) : Unique identifier</li>
+<li>Username(string) :  User name</li>
+<li>Email Address(string) : Email id of the user</li>
+<li>Password(string): Password of the user</li>
+</ul>
+<h2 id='create'>Create</h2><h3 id='user-sign-up'>User Sign Up</h3>
 <p>This endpoint registers the user</p>
 
 <blockquote>
@@ -329,7 +341,7 @@ http://stage.internal.shopwell.com/v2/session
 <td>application/json</td>
 </tr>
 </tbody></table>
-<h1 id='product'>Product</h1><h2 id='product-show-detail'>Product Show/Detail</h2><h3 id='get-a-specific-product-details'>Get a specific product details</h3>
+<h1 id='product'>Product</h1><h2 id='product-show-detail'>Product Show/Detail</h2><h3 id='product-attributes'>Product Attributes</h3><h3 id='get-product-details'>Get  product details</h3>
 <p>This endpoint retrieves the product details based on its upc value</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET http://stage.internal.shopwell.com/v2/product?upc=&lt;product upc&gt;</code></p>
