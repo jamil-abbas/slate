@@ -3,7 +3,7 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - json
-- curl
+
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -110,6 +110,214 @@ This endpoint registers the user
 
 ### Product Attributes
 
+* Product_Details 
+ * avoid_by_profiles
+ * brand_name
+ * comments
+ * current_list_ids
+ * fit_score
+ * fit_score_label
+ * fit_score_type
+ * id
+ * last_purchased
+ * matches_avoids
+ * matches_dont_wants
+ * matches_moderation
+ * matches_wants
+ * moderation_flag
+ * nutrition_labels
+        * nutrition_percentages 
+            * Total Fat
+            * Saturated Fat
+            * Carbohydrate
+            * Cholesterol
+            * Sodium: 17
+            * Potassium
+            * Fiber
+            * Vitamin A
+            * Vitamin C
+            * Vitamin D
+            * Vitamin E
+            * Vitamin B6
+            * Vitamin B12
+            * Calcium
+            * Iron
+            * Thiamin
+            * Riboflavin
+            * Niacin
+            * Phosphorus
+            * Iodine
+            * Zinc
+            * Magnesium
+            * Copper
+            * Folic Acid              
+        * nutrition_quantities 
+            * Fat 
+                * total
+                * breakdown 
+                * uom
+            * Carbs 
+                * total
+                * breakdown 
+                * uom
+            * Protein 
+                * total
+                * breakdown 
+                * uom
+            * Cholesterol  
+                * total
+                * breakdown
+                * uom
+                        
+            * Sodium 
+                * total
+                * breakdown
+                * uom
+                        
+            * Potassium  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Vitamin A  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Vitamin C   
+                * total
+                * breakdown
+                * uom 
+                        
+            * Vitamin D  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Vitamin E  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Vitamin B6  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Vitamin B12  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Calcium  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Iron  
+                * total
+                * breakdown
+                * uom
+                        
+            * Thiamin  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Riboflavin  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Niacin  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Phosphorus  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Iodine  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Zinc  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Magnesium  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Copper  
+                * total
+                * breakdown
+                * uom 
+                        
+            * Folic Acid  
+                * total
+                * breakdown
+                * uom 
+                    
+        * Calories
+            * total
+            * breakdown
+            * uom
+                    
+        * serving
+            * servingSize
+            * servingSizeAmount
+            * servingsPerContainer
+ * onlineStores
+ * primary_store_id 
+ * product_description Black Peppercorn
+ * product_image 
+ * product_image_full 
+ * product_name 
+ * product_size 
+ * product_size_unit 
+ * rating 
+ * rating_stats
+    * likes 
+    * dislikes 
+
+ * show_additional_details 
+ * stores
+ * top_preference 
+ * top_preference_multiple 
+ * upc 
+* alternate_products
+ * bestforme_index
+ * brand_name 
+ * current_list_ids 
+ * fit_score 
+ * fit_score_type 
+ * id 
+ * matches_avoids 
+ * matches_dont_wants 
+ * matches_wants 
+ * nearme_index 
+ * onlineStores
+ * primary_store_id 
+ * product_description 
+ * product_image 
+ * product_name 
+ * product_size 
+ * product_size_unit
+ * rating 
+ * rating_stats
+   * likes 
+   * dislikes 
+ * result_position 
+ * stores
+ * upc    
+* trade_up_mode             
+
 
 ### Get  product details
 
@@ -130,7 +338,7 @@ This endpoint retrieves the product details based on its upc value
 
 ```json
 [
-  {
+  { 
     "status": "success",
     "data": {
         "product_details": {
